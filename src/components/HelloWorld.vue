@@ -10,6 +10,7 @@ defineProps({
 <template>
   <div class="greetings">
     <h1 class="text-black">{{ msg }}</h1>
+    <p>Paragraphe</p>
   </div>
 </template>
 
