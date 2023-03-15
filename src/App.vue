@@ -1,11 +1,5 @@
-<script>
-
+<script setup>
 import Chat from './components/Chat.vue'
-export default{
-  components:{
-    Chat
-  }
-}
 </script>
 
 <template>

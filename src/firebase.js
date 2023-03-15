@@ -44,7 +44,6 @@ export function useChat() {
   const unsubscribe = messagesQuery.onSnapshot((snapshot) => {
     messages.value = snapshot.docs
       .map((doc) => ({ id: doc.id, ...doc.data() }))
-      .reverse();
   });
   onUnmounted(unsubscribe);
 
