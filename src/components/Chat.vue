@@ -1,7 +1,7 @@
 <script setup>
 import { reactive , ref } from 'vue'
 import { useChat , useAuth } from '../firebase'
-// import Message from '../components/Message.vue'
+import Message from '../components/Message.vue'
 
 const{user}=useAuth()
 const{messages,sendMessage}=useChat()
@@ -22,7 +22,7 @@ function sendNewMessage(){
       <Message
         v-for="{ id, text, userPhotoURL, userName, userId, createdAt } in listMessages"
         :key="id"
-        :createdAt="createdAt"
+        :createdAt="new Date(createdAt?.seconds * 1000).toLocaleString('fr')"
         :name="userName"
         :photoUrl="userPhotoURL"
         :sender="userId === user?.uid"
