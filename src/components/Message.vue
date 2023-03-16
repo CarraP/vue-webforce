@@ -3,7 +3,7 @@
       <span class="capitalize text-white text-xs font-mono" v-if="!sender">{{ name }}</span>
       <div class="flex rounded gap-3" :class="sender ? 'flex-row-reverse' : ''">
         <Avatar class="h-10 rounded-full" :src="photoUrl" />
-        <div class="font-mono text-sm rounded-3xl text max-w-2/4 min-h-16 px-6 py-3 text-white" :class="sender ? 'bg-emerald-700' : 'bg-gray-700'">
+        <div class="font-mono drop-shadow-lg rounded-3xl text-xs min-h-16 px-6 py-3 text-white" :class="sender ? 'bg-emerald-700' : 'bg-gray-700'">
             <p class="text-xs text-gray-400">{{ createdAt }}</p>
           <slot />
         </div>

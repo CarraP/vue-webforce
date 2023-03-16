@@ -2,17 +2,17 @@
   <nav>
     <div class="flex justify-between px-10 h-[80px] bg-slate-900 text-white">
 
-      <router-link to="/" class="flex">
-        <img src="../assets/img/logo.jpg" alt="logo">
-        <h1 class="font-bold p-6">Vue Application</h1>
+      <router-link to="/" class="flex items-center">
+        <img src="../assets/img/logo.jpg" class="h-14" alt="logo">
+        <h1 class="font-bold font-mono invisible sm:visible"> <span class="font-bold text-emerald-600 font-mono">Vue</span> Application</h1>
       </router-link>
 
-      <div v-if="isLogin" class="login flex">
-        <button class="bg-green-500 hover:bg-green-600 h-[40px] w-[120px] m-5 rounded-xl" @click="signOut">Déconnexion</button>
-        <router-link to="/account"><Avatar :src="user.photoURL" class="w-[60px] h-[60px] rounded-xl m-2.5"/></router-link>
+      <div v-if="isLogin" class="login flex items-center gap-1">
+        <button class=" px-4 py-2 font-mono text-xs rounded-full underline" @click="signOut">Déconnexion</button>
+        <router-link to="/account"><Avatar :src="user.photoURL" class="w-14 rounded-xl"/></router-link>
       </div>   
 
-      <button v-else class="bg-green-500 hover:bg-green-600 h-[40px] w-[120px] m-5 rounded-xl" @click="signIn">Connexion</button>
+      <button v-else class="m-5" @click="signIn">Connexion</button>
       
     </div>
   </nav>

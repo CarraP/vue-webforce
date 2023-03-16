@@ -31,11 +31,12 @@ function sendNewMessage(){
       </Message>
     </div>
 
-    <div class="send-container flex h-[150px]">
-      <textarea v-model="newMessage" class="grow resize-none" placeholder="Message" maxlength="255"></textarea>
-      <button @click="sendNewMessage">
+    
+      <form @submit.prevent="sendNewMessage" class="send-container flex max-h-[150px] px-3 py-2">
+      <input v-model="newMessage" class="p-2 font-mono text-xs outline-emerald-700 focus:outline-double text-white grow resize-none bg-slate-900 rounded-md" placeholder="Message" maxlength="255"/>
+      <button type="submit" >
         <svg
-          class="icon-send text-green-500 hover:text-green-600 w-[50px] px-2"
+          class="icon-send text-emerald-600 hover:text-emerald-900 w-[40px] px-2 duration-200"
           aria-hidden="true"
           focusable="false"
           role="img"
@@ -48,8 +49,8 @@ function sendNewMessage(){
           />
         </svg>
       </button>
-    </div>
-
+    </form>
+  
  </div>
 </template>
 
