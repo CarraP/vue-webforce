@@ -59,6 +59,12 @@ export function useChat() {
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     });
   };
+  const updateMessage = (newText,docRef) => {
+    if (!isLogin.value) return;
+    messagesCollection.doc(docRef).update({
+      text : newText
+    })
+  }
 
-  return { messages, sendMessage };
+  return { messages, sendMessage, updateMessage };
 }

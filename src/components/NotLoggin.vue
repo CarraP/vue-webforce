@@ -1,5 +1,4 @@
 <script setup>
-
 </script>
 
 <template>
@@ -29,17 +28,17 @@ svg .draw-arrow {
   fill: none;
   stroke-dasharray: 400;
   stroke-dashoffset: 400;
-  animation-duration: 5.0s;
+  animation-duration: 3.2s;
   animation-fill-mode: forwards;
   animation-name: draw;
   }
 
   svg .draw-arrow.tail-1 {
-  animation-delay: 0.9s;
+  animation-delay: 0.55s;
   }
 
   svg .draw-arrow.tail-2 {
-  animation-delay: 1.4s;
+  animation-delay: 0.9s;
   }
 
   @keyframes draw {
