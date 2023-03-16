@@ -8,8 +8,8 @@
       </router-link>
 
       <div v-if="isLogin" class="login flex">
-        <router-link to="/account"><Avatar :src="user.photoURL" class="w-[60px] h-[60px] rounded-xl m-2.5" /></router-link>
         <button class="bg-green-500 hover:bg-green-600 h-[40px] w-[120px] m-5 rounded-xl" @click="signOut">Déconnexion</button>
+        <router-link to="/account"><Avatar :src="user.photoURL" class="w-[60px] h-[60px] rounded-xl m-2.5"/></router-link>
       </div>   
 
       <button v-else class="bg-green-500 hover:bg-green-600 h-[40px] w-[120px] m-5 rounded-xl" @click="signIn">Connexion</button>
