@@ -4,7 +4,7 @@ import { useChat , useAuth } from '../firebase'
 import Message from '../components/Message.vue'
 
 const{user}=useAuth()
-const{messages,sendMessage}=useChat()
+const{messages,sendMessage,updateMessage}=useChat()
 
 const newMessage = ref('')
 const listMessages = reactive(messages)
@@ -26,6 +26,8 @@ function sendNewMessage(){
         :name="userName"
         :photoUrl="userPhotoURL"
         :sender="userId === user?.uid"
+        :text="text"
+        :docId="id"
       >
         {{ text }}
       </Message>
@@ -52,6 +54,7 @@ function sendNewMessage(){
     </form>
   
  </div>
+
 </template>
 
 <style scoped>
