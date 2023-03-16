@@ -7,29 +7,12 @@ const{user}=useAuth()
 const{messages,sendMessage,updateMessage}=useChat()
 
 const newMessage = ref('')
-const idCurrentMessage= ref('')
-const poPupBool = ref(false)
 const listMessages = reactive(messages)
 
 function sendNewMessage(){
   sendMessage(newMessage.value)
   newMessage.value=''
 }
-// function updataMyMessage(){
-//   updateMessage(newMessage.value,)
-//   idCurrentMessage.value=""
-// }
-// function popOpen(id,text){
-//   poPupBool.value=true
-//   idCurrentMessage.value=id
-//   newMessage.value=text
-//   console.log('id:','text:')
-// }
-// function popClose(){
-//   poPupBool.value=false
-//   idCurrentMessage.value=""
-//   newMessage.value=''
-// }
 </script>
 
 <template>
