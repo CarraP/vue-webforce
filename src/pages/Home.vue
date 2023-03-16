@@ -1,5 +1,6 @@
 <script setup>
   import Chat from '@/components/Chat.vue'
+  import {useAuth} from '../firebase'
 </script>
 
 <template>
