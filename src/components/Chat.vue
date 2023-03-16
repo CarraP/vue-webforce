@@ -1,7 +1,7 @@
 <script setup>
 import { reactive , ref } from 'vue'
 import { useChat , useAuth } from '../firebase'
-import Message from '../components/Message.vue'
+// import Message from '../components/Message.vue'
 
 const{user}=useAuth()
 const{messages,sendMessage}=useChat()
@@ -31,7 +31,7 @@ function sendNewMessage(){
       </Message>
     </div>
 
-    <div class="send-container flex h-[400px]">
+    <div class="send-container flex h-[150px]">
       <textarea v-model="newMessage" class="grow resize-none" placeholder="Message" maxlength="255"></textarea>
       <button @click="sendNewMessage">
         <svg
