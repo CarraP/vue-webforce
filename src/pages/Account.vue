@@ -1,9 +1,9 @@
 <template>
     <div class="flex flex-col items-center gap-8 bg-slate-800 h-[calc(100%-80px)] pb-20">
 
-        <p class="text-3xl font-bold pt-10 text-white font-mono">Bonjour {{ user.displayName }} !</p>
+        <p class="text-2xl font-bold pt-10 text-white font-mono">Bonjour {{ user.displayName }} !</p>
     
-        <p class="font-medium text-2xl text-white font-mono mb-4">Vous avez envoyé {{ filteredMessage.length }} messages</p>
+        <p class="font-medium text-xl text-white font-mono mb-4">Vous avez envoyé {{ filteredMessage.length }} messages</p>
         
            
         <select class="mb-4 bg-slate-900 border-none text-white focus:outline-none px-3 py-1 font-mono" v-model="timeChosen">
@@ -13,10 +13,8 @@
             <option value="1440">Dans les dernières vingt-quatre heures</option>
         </select>
         <p class="font-medium text-2xl text-white font-mono mb-4 text-center">Historique des messages : </p>
-            <div class="overflow-y-scroll messages-container flex flex-col justify-center px-4">
-
-
-                <Message
+            <div class="overflow-y-scroll messages-container flex flex-col">
+                 <Message
                     v-for="{ id, text, userPhotoURL, userName, userId, createdAt } in filteredTime"
                     :key="id"
                     :createdAt="new Date(createdAt?.seconds * 1000).toLocaleString('fr')"

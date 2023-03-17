@@ -42,8 +42,10 @@ const messagesQuery = messagesCollection
 export function useChat() {
   const messages = ref([]);
   const unsubscribe = messagesQuery.onSnapshot((snapshot) => {
-    messages.value = snapshot.docs
-      .map((doc) => ({ id: doc.id, ...doc.data() }))
+    messages.value = snapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
   });
   onUnmounted(unsubscribe);
 
@@ -59,16 +61,16 @@ export function useChat() {
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     });
   };
-  const updateMessage = (newText,docRef) => {
+  const updateMessage = (newText, docRef) => {
     if (!isLogin.value) return;
     messagesCollection.doc(docRef).update({
-      text : newText
-    })
-  }
-  const deleteMessage = (docRef)=>{
+      text: newText,
+    });
+  };
+  const deleteMessage = (docRef) => {
     if (!isLogin.value) return;
-    messagesCollection.doc(docRef).delete()
-  }
+    messagesCollection.doc(docRef).delete();
+  };
 
   return { messages, sendMessage, updateMessage, deleteMessage };
 }
