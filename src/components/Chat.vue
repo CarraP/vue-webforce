@@ -1,13 +1,13 @@
 <script setup>
-import { reactive , ref } from 'vue'
 import { useChat , useAuth } from '../firebase'
 import Message from '../components/Message.vue'
+import { reactive , ref } from 'vue'
 
 const{user}=useAuth()
-const{messages,sendMessage,updateMessage}=useChat()
+const{messages,sendMessage}=useChat()
 
-const newMessage = ref('')
 const listMessages = reactive(messages)
+const newMessage = ref('')
 
 function sendNewMessage(){
   sendMessage(newMessage.value)

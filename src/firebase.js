@@ -65,6 +65,10 @@ export function useChat() {
       text : newText
     })
   }
+  const deleteMessage = (docRef)=>{
+    if (!isLogin.value) return;
+    messagesCollection.doc(docRef).delete()
+  }
 
-  return { messages, sendMessage, updateMessage };
+  return { messages, sendMessage, updateMessage, deleteMessage };
 }

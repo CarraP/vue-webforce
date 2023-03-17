@@ -5,18 +5,17 @@
     
         <p class="font-medium text-2xl text-white font-mono mb-4">Vous avez envoyé {{ filteredMessage.length }} messages</p>
         
-        <Avatar class="w-40 rounded-full" :src="user.photoURL"/>
            
+        <select class="mb-4 bg-slate-900 border-none text-white focus:outline-none px-3 py-1 font-mono" v-model="timeChosen">
+            <option :value="all">Tous</option>
+            <option value="10">Dans les dix dernières minutes</option>
+            <option value="60">Dans la dernière heure</option>
+            <option value="1440">Dans les dernières vingt-quatre heures</option>
+        </select>
+        <p class="font-medium text-2xl text-white font-mono mb-4 text-center">Historique des messages : </p>
             <div class="overflow-y-scroll messages-container flex flex-col justify-center px-4">
 
-                <select class="mb-4 bg-slate-900 border-none text-white focus:outline-none px-3 py-1 font-mono" v-model="timeChosen">
-                    <option :value="all">Tous</option>
-                    <option value="10">Dans les dix dernières minutes</option>
-                    <option value="60">Dans la dernière heure</option>
-                    <option value="1440">Dans les dernières vingt-quatre heures</option>
-                </select>
 
-                <p class="font-medium text-2xl text-white font-mono mb-4 text-center">Historique des messages : </p>
                 <Message
                     v-for="{ id, text, userPhotoURL, userName, userId, createdAt } in filteredTime"
                     :key="id"
