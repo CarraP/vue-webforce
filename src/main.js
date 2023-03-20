@@ -3,8 +3,11 @@ import { createRouter,createWebHistory } from 'vue-router'
 import Home from '@/pages/Home.vue'
 import Account from '@/pages/Account.vue'
 import App from './App.vue'
+import {useAuth} from './firebase'
 
 import './assets/main.css'
+
+const {isLogin} = useAuth()
 
 const router = createRouter({
     history: createWebHistory(),
@@ -14,6 +17,10 @@ const router = createRouter({
     ]
 })
 
-createApp(App)
-.use(router)
-.mount('#app')
+router.beforeEach((to)=>{
+    if(!isLogin.value && to.name!=='Home') return '/'
+})
+
+const app = createApp(App)
+app.use(router)
+app.mount('#app')

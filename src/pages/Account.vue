@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col items-center gap-8 bg-slate-800 h-[calc(100%-80px)] pb-20">
 
-        <p class="text-2xl font-bold pt-10 text-white font-mono">Bonjour {{ user.displayName }} !</p>
+        <p class="text-2xl font-bold pt-10 text-white font-mono">Bonjour {{ user?.displayName }} !</p>
     
         <p class="font-medium text-xl text-white font-mono mb-4">Vous avez envoyé {{ filteredMessage.length }} messages</p>
         
